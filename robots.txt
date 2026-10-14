@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /test
+Disallow: /test.html
+Disallow: /README
+Disallow: /script.js
+Disallow: /style.css
+
+Sitemap: https://freisingua.com
+

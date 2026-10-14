@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+  <!-- Главная страница -->
+  <url>
+    <loc>https://www.freisingua.com/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- Страница "О нас" -->
+  <url>
+    <loc>https://www.freisingua.com/about.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Галерея -->
+  <url>
+    <loc>https://www.freisingua/comgallery.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Документы -->
+  <url>
+    <loc>https://www.freisingua.com/documents.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Анна -->
+  <url>
+    <loc>https://www.freisingua.com/anna.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Апостиль -->
+  <url>
+    <loc>https://www.freisingua.com/apostil.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Контакты -->
+  <url>
+    <loc>https://www.freisingua.com/contacts.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Налоги -->
+  <url>
+    <loc>https://www.freisingua.com/taxes.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Переводчики -->
+  <url>
+    <loc>https://www.freisingua.com/TRANSLATORS.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Транспортировка / Перевозки -->
+  <url>
+    <loc>https://wwwfreisingua.com/transportation.html</loc>
+    <priority>0.8</priority>
+  </url>
+   <!-- Транспортировка / Перевозки -->
+  <url>
+    <loc>https://wwwfreisingua.com/citizenship.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- Транспортировка / Перевозки -->
+  <url>
+    <loc>https://wwwfreisingua.com/apostil.html</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  
+</urlset>
+

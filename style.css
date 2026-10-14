@@ -1,0 +1,1585 @@
+/* =========================================================
+   FREISING UA — STYLE.CSS
+   ========================================================= */
+
+
+/* =========================================================
+   ANNA PHOTO
+   ========================================================= */
+
+.anna-photo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f4f2;
+    color: #111;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 72px;
+
+    padding: 0 4%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(255,255,255,.94);
+
+    backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid #ddd;
+
+    z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   MAIN MENU
+   ========================================================= */
+
+.menu {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+
+/* Обычные пункты меню */
+
+.menu > a {
+    font-size: 13px;
+    color: #444;
+
+    position: relative;
+
+    white-space: nowrap;
+}
+
+
+/* Подчёркивание ТОЛЬКО обычных пунктов.
+   Раньше здесь было .menu a:after,
+   из-за этого стили попадали и в подменю. */
+
+.menu > a:after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #111;
+
+    transition: .25s;
+}
+
+.menu > a:hover:after,
+.menu > a.active:after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+
+    background: none;
+
+    font-size: 27px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   DROPDOWN — ДОКУМЕНТЫ
+   ========================================================= */
+
+.menu-item.dropdown {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Кнопка Документы.
+   Делаем её визуально такой же, как остальные пункты. */
+
+.menu .dropdown-btn {
+    appearance: none;
+    -webkit-appearance: none;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #444;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    padding: 0;
+
+    margin: 0;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+/* Наведение */
+
+.menu .dropdown-btn:hover {
+    background: transparent;
+
+    color: #111;
+}
+
+
+/* Нажатие / фокус */
+
+.menu .dropdown-btn:focus,
+.menu .dropdown-btn:active {
+    background: transparent;
+
+    outline: none;
+
+    box-shadow: none;
+}
+
+
+/* Стрелочка */
+
+.dropdown-btn span {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    font-size: 11px;
+
+    transition: transform .25s ease;
+}
+
+
+/* =====================================================================++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   SUBMENU
+   ========================================================= */
+
+.menu .submenu {
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    right: 0;
+    left: auto;
+
+    min-width: 220px;
+
+    padding: 8px 0;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 6px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+
+    z-index: 99999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+}
+
+
+/* Пункты подменю */
+
+.menu .submenu a {
+    display: block;
+
+    position: relative;
+
+    padding: 11px 18px;
+
+    margin: 0;
+
+    color: #333;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+    transition:
+        background .2s ease,
+        padding-left .2s ease;
+}
+
+
+/* Очень важно:
+   убираем старое подчёркивание у ссылок подменю */
+
+.menu .submenu a:after {
+    display: none !important;
+
+    content: none !important;
+}
+
+
+/* Наведение на подменю */
+
+.menu .submenu a:hover {
+    background: #f1f1f1;
+
+    padding-left: 24px;
+
+    color: #111;
+}
+
+
+/* =========================================================
+   ОТКРЫТИЕ ПОДМЕНЮ
+   ========================================================= */
+
+
+/* При наведении мышкой */
+
+.menu .dropdown:hover .submenu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* При нажатии */
+
+.menu .dropdown.open .submenu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Поворачиваем стрелку */
+
+.menu .dropdown:hover .dropdown-btn span,
+.menu .dropdown.open .dropdown-btn span {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   УБИРАЕМ ЛИШНИЕ ТОЧКИ
+   ========================================================= */
+
+.menu .dropdown::before,
+.menu .dropdown::after,
+.menu .dropdown-btn::before,
+.menu .dropdown-btn::after,
+.menu .submenu::before,
+.menu .submenu::after {
+    content: none !important;
+
+    display: none !important;
+}
+
+
+/* =========================================================.===++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+   MAIN LAYOUT
+   ========================================================= */
+
+.layout {
+    display: flex;
+
+    min-height: 100vh;
+
+    padding-top: 72px;
+}
+
+
+.main-column {
+    width: 70%;
+    min-height: calc(100vh - 72px);
+    
+    /* БЫЛО: padding: 70px 7%; */
+    padding: 25px 7% 70px 7%; /* Уменьшили верхний отступ с 70px до 25px */
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+
+.side-column {
+    width: 30%;
+
+    min-height: calc(100vh - 72px);
+
+    padding: 70px 4%;
+
+    background: #e8e8e5;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    position: relative;
+}
+
+
+.content {
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.number {
+    position: absolute;
+
+    top: 30px;
+    right: 35px;
+
+    font-size: 12px;
+
+    color: #999;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TEXT
+   ========================================================= */
+
+.eyebrow {
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: #777;
+
+    margin-bottom: 22px;
+}
+
+
+/* Также уберем лишний разгон у самого заголовка */
+h1 {
+    font-size: clamp(48px,6vw,90px);
+    line-height: .92;
+    letter-spacing: -5px;
+    
+    /* БЫЛО: margin-bottom: 30px; */
+    margin-top: 0;           /* Обнуляем отступ сверху, если он был */
+    margin-bottom: 20px;     /* Немного поджали снизу */
+}
+
+
+h2 {
+    font-size: clamp(35px,4vw,58px);
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+
+h3 {
+    font-size: 22px;
+
+    margin: 10px 0;
+}
+
+
+.lead {
+    font-size: 18px;
+
+    color: #555;
+
+    
+
+    margin-bottom: 32px;
+}
+
+
+.side-column h2 {
+    font-size: clamp(38px,4vw,62px);
+}
+
+
+.side-column p {
+    color: #666;
+
+    max-width: 300px;
+}
+
+
+.side-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    border-top: 1px solid #ccc;
+
+    padding-top: 16px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #888;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.button {
+    display: inline-block;
+
+     background:  #e8e9e4; /* Поменяйте этот код (например, #3498db для синего) */
+
+    color: #111111;
+
+    padding: 14px 25px;
+
+    font-size: 13px;
+
+    transition: .25s;
+
+    margin-bottom: 30px;
+}
+
+
+.button:hover {
+    background:  #e74c3c; 
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+
+.cards article {
+    background: #f2f2f0;
+
+    padding: 25px;
+
+    min-height: 150px;
+}
+
+
+.cards b {
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+.cards p {
+    font-size: 13px;
+
+    color: #666;
+}
+
+
+/* =========================================================
+   GALLERY
+   ========================================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 15px;
+}
+
+
+.gallery figure {
+    height: 230px;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.gallery img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .5s;
+}
+
+
+.gallery figure:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   DOCUMENTS
+   ========================================================= */
+
+.documents {
+    display: grid;
+
+    gap: 12px;
+
+    max-width: 700px;
+}
+
+
+.document {
+    display: grid;
+
+    grid-template-columns: 55px 1fr auto;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: #f2f2f0;
+
+    border: 1px solid #ddd;
+
+    transition: .25s;
+}
+
+
+.document:hover {
+    background: #e8e8e5;
+}
+
+
+.document span {
+    font-size: 11px;
+
+    color: #999;
+}
+
+
+.document strong {
+    font-size: 15px;
+}
+
+
+.document small {
+    color: #777;
+}
+
+
+/* =========================================================
+   ANNA
+   ========================================================= */
+
+.anna-layout {
+    display: grid;
+
+    grid-template-columns: minmax(220px,350px) 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+}
+
+
+.anna-photo {
+    height: 430px;
+
+    overflow: hidden;
+
+    background: #ddd;
+}
+
+
+.anna-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: scale .4s ease-in-out !important;
+
+    scale: 1 !important;
+}
+
+
+.anna-photo:hover img {
+    scale: 1.06 !important;
+}
+
+
+.anna-layout p {
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CONTACTS
+   ========================================================= */
+
+.contact-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+
+    font-size: 20px;
+}
+
+
+.contact-list a {
+    width: max-content;
+
+    border-bottom: 1px solid #aaa;
+
+    padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    height: 65px;
+
+    background: #111;
+
+    color: #777;
+
+    padding: 0 4%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   VIDEO
+   ========================================================= */
+
+.video-responsive {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 30px auto;
+
+    aspect-ratio: 16 / 9;
+
+    box-sizing: border-box;
+}
+
+
+.video-responsive iframe {
+    width: 100% !important;
+
+    height: 100% !important;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* =========================================================
+   AUTHOR BLOCK
+   ========================================================= */
+
+.author-block {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.author-avatar {
+    width: 38px;
+
+    height: 38px;
+
+    background-color: #25D366;
+
+    color: #fff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    user-select: none;
+}
+
+
+.author-info {
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.2;
+}
+
+
+.author-name {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+
+.author-date {
+    font-size: 11px;
+
+    color: #888;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 1000;
+
+    left: 0;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,.9);
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.modal.active {
+    display: flex;
+}
+
+
+.modal-content {
+    max-width: 90%;
+
+    max-height: 90%;
+
+    object-fit: contain;
+
+    border-radius: 4px;
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 20px;
+
+    right: 35px;
+
+    color: #fff;
+
+    font-size: 40px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+
+.modal-close:hover {
+    color: #bbb;
+}
+
+
+/* =========================================================
+   DESKTOP — ПРАВАЯ КОЛОНКА
+   ========================================================= */
+
+@media (min-width: 751px) {
+
+    .layout {
+        display: block;
+
+        position: relative;
+    }
+
+
+    .main-column {
+        width: 70% !important;
+    }
+
+
+    .side-column {
+        position: fixed !important;
+
+        top: 72px;
+
+        right: 0;
+
+        width: 30% !important;
+
+        height: calc(100vh - 72px) !important;
+
+        z-index: 900;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .menu {
+        gap: 16px;
+    }
+
+
+    .menu > a,
+    .menu .dropdown-btn {
+        font-size: 12px;
+    }
+
+
+    .main-column {
+        padding: 60px 5%;
+    }
+
+
+    .side-column {
+        padding: 60px 3%;
+    }
+
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .anna-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    .anna-photo {
+        height: 320px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    /* Кнопка ☰ */
+
+    .menu-toggle {
+        display: block;
+    }
+
+
+    /* Главное меню */
+
+    .menu {
+        display: none;
+
+        position: absolute;
+
+        top: 65px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #fff;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        border-bottom: 1px solid #ddd;
+
+        align-items: stretch;
+    }
+
+
+    .menu.open {
+        display: flex;
+    }
+
+
+    /* Обычные пункты */
+
+    .menu > a {
+        width: 100%;
+
+        padding: 16px 22px;
+
+        border-bottom: 1px solid #eee;
+
+        font-size: 14px;
+    }
+
+
+    .menu > a:after {
+        display: none;
+    }
+
+
+    /* Документы */
+
+    .menu-item.dropdown {
+        width: 100%;
+
+        display: block;
+    }
+
+
+    .menu .dropdown-btn {
+        width: 100%;
+
+        padding: 16px 22px !important;
+
+        text-align: left;
+
+        border-bottom: 1px solid #eee !important;
+
+        font-size: 14px !important;
+    }
+
+
+    /* Подменю на телефоне */
+
+    .menu .submenu {
+        position: static;
+
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 0;
+
+        background: #f5f5f3;
+
+        border: none;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        transform: none;
+
+        display: none;
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    /* Открытое подменю */
+
+    .menu .dropdown.open .submenu {
+        display: block;
+    }
+
+
+    .menu .submenu a {
+        padding: 14px 38px !important;
+
+        font-size: 13px;
+    }
+
+
+    .menu .submenu a:hover {
+        padding-left: 44px !important;
+    }
+
+
+    /* Layout */
+
+    .layout {
+        flex-direction: column;
+
+        padding-top: 65px;
+    }
+
+
+    .main-column,
+    .side-column {
+        width: 100%;
+
+        min-height: auto;
+    }
+
+
+    .main-column {
+        padding: 90px 28px;
+    }
+
+
+    .side-column {
+        padding: 60px 28px;
+
+        gap: 60px;
+    }
+
+
+    .hero {
+        min-height: 75vh;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    .gallery figure {
+        height: 180px;
+    }
+
+
+    .document {
+        grid-template-columns: 45px 1fr;
+    }
+
+
+    .document small {
+        display: none;
+    }
+
+
+    .anna-layout {
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        gap: 20px !important;
+
+        width: 100% !important;
+    }
+
+
+    .anna-photo {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        overflow: visible !important;
+    }
+
+
+    .anna-photo img {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        object-fit: contain !important;
+    }
+
+
+    footer {
+        height: auto;
+
+        padding: 22px 28px;
+
+        gap: 10px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    h1 {
+        font-size: 50px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery figure {
+        height: 220px;
+    }
+}
+
+
+/* =========================================================
+   ИСПРАВЛЕНИЯ: ПОДМЕНЮ, ОТСТУПЫ И МОБИЛЬНАЯ ВЕРСИЯ
+   ========================================================= */
+
+/* 1. Полностью скрываем выпадающее подменю "Документы" */
+.menu .submenu {
+    display: none !important;
+}
+.menu .dropdown:hover .dropdown-btn span,
+.menu .dropdown.open .dropdown-btn span {
+    transform: none !important;
+}
+
+
+/* 2. Приподнимаем заголовок на компьютерах (уменьшаем верхний отступ) */
+.main-column {
+    padding-top: 30px !important; /* Было 70px, уменьшили до 30px */
+}
+h1 {
+    margin-top: 0 !important;
+}
+
+
+/* 3. Мобильная адаптивность и исправление отступов на смартфонах */
+@media screen and (max-width: 768px) {
+    
+    /* Перестраиваем колонки сайта друг под друга */
+    body .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding-top: 72px !important;
+    }
+    
+    /* Убираем гигантские отступы десктопа на мобильных экранах */
+    body .main-column {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 20px 5% !important; /* Минимальные аккуратные отступы для телефонов */
+        display: block !important;
+    }
+    
+    body .side-column {
+        width: 100% !important;
+        min-height: auto !important;
+        padding: 30px 5% !important;
+    }
+
+    /* Уменьшаем огромный шрифт заголовка, чтобы он аккуратно встал на экран телефона */
+    body h1 {
+        font-size: 32px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -1px !important;
+        margin-top: 5px !important;
+        margin-bottom: 15px !important;
+    }
+    
+    body h2 {
+        font-size: 26px !important;
+        line-height: 1.1 !important;
+        letter-spacing: -1px !important;
+    }
+}
+.button {
+    display: block;         /* ИЗМЕНЕНО: теперь кнопка ведет себя как блок, что позволяет центрировать её */
+    width: 100%;           /* Растягивает кнопку на всю доступную ширину контента */
+    max-width: 400px;      /* Ограничивает максимальную ширину (подберите цифру под дизайн) */
+     margin: 0 auto 40px auto; /* Центрирует кнопку и делает отступ 40px снизу */
+    box-sizing: border-box; /* Чтобы внутренние отступы не ломали указанную ширину */
+    text-align: center;    /* Выравнивает текст строго по центру внутри самой кнопки */
+    vertical-align: middle; 
+} 
+/* Выравниваем все блочные элементы (включая нашу кнопку) по центру внутри контента */
+.content .button {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 40px !important; /* Наш отступ снизу */
+}
+/* Сетка для автоматического выравнивания карточек в ряд */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1-fraction));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Стили самой карточки __________________________________________________________________________*/
+/* Настройка сетки: строго по 2 штуки в ряд */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Ровно 2 колонки */
+  gap: 20px;                             /* Расстояние между кнопками */
+  padding: 20px;
+  max-width: 1000px;                     /* Ограничение ширины, чтобы не растягивались на весь экран */
+  margin: 0 auto;                        /* Центрирование всего блока на странице */
+  box-sizing: border-box;
+}
+
+/* Настройка внешнего вида самой кнопки-карточки */
+.info-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f5f9;             /* Стильный светло-серый фон */
+  border: 1px solid #e2e8f0;              /* Тонкая серая рамка */
+  border-radius: 8px;                    /* Скругление углов */
+  padding: 24px;
+  text-decoration: none;                 /* Убираем подчеркивание текста */
+  color: #000000;                        /* Черный цвет текста */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 140px;                     /* Минимальная высота карточки */
+  justify-content: space-between;
+  
+}
+
+/* Эффект при наведении мышки */
+/* Здесь подчеркивание убираем, оставляем только подъем карточки */
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  
+}
+
+
+
+/* Настройка иконки */
+.card-icon {
+  font-size: 32px;                       /* Размер временных эмодзи-иконок */
+  margin-bottom: 15px;
+  color: #64748b;                        /* Цвет иконки */
+}
+
+/* Настройка текста */
+.card-title {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  font-weight: 700;                      /* Жирный шрифт */
+  line-height: 1.4;
+}
+
+/* Адаптивность: на мобилках (экраны меньше 768px) кнопки встанут по одной в ряд */
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+/* Эффект: когда мышка наводится на ВСЮ карточку, подчеркивается ТОЛЬКО надпись */
+.info-card:hover .card-title {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;      /* Красивая тонкая линия */
+  text-underline-offset: 4px;          /* Аккуратный отступ от букв вниз */
+}
+/* При наведении текст становится красным и подчеркивается */
+.info-card:hover .card-title {
+  color: #000000;                     /* ЧЕРНЫЙ ТЕКСТ */
+  text-decoration: underline;
+  text-decoration-color: #dc2626;      /* Красный цвет линии подчеркивания */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+/* Выстраиваем карточку и текстовый блок автора в один ряд */
+.row-container {
+  display: flex;
+  align-items: center;    /* Центрируем текст по вертикали относительно карточки */
+  gap: 25px;              /* Расстояние между карточкой и текстом */
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+/* Контейнер для текста и аватарки */
+.side-content-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* На мобильных экранах (меньше 768px) перестраиваем обратно в один столбец */
+@media (max-width: 768px) {
+  .row-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+	margin-bottom: 100px;
+  }
+  .row-container .cards-grid {
+    max-width: 100% !important; /* На смартфонах карточка растянется на всю ширину */
+  }
+}
+/* Контейнер для выстраивания строго в один ряд */
+.card-and-text-row {
+	
+  display: flex;
+  align-items: center;    /* Выравнивание по центру высоты */
+  gap: 30px;              /* Расстояние между карточкой и текстом */
+  margin: 25px 0;
+  width: 100%;
+}
+
+/* Стили карточки, чтобы она не зависела от общей сетки */
+.single-row-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #f1f5f9;  /* Серый фон по умолчанию */
+  border: 1px solid #cbd5e1;  /* Серая рамка */
+  border-radius: 8px;
+  padding: 24px;
+  text-decoration: none;
+  color: #000000;
+  min-height: 140px;
+  width: 100%;
+  max-width: 320px;          /* Фиксированная ширина карточки */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Эффекты при наведении на эту карточку */
+.single-row-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Мягкая тень покороче */
+  background-color: #ffffff;                 /* Становится белой при наведении */
+}
+
+/* Подчеркивание только надписи внутри карточки при наведении */
+/* Подчеркивание только надписи внутри карточки при наведении */
+.single-row-card:hover .card-title {
+  text-decoration: underline;
+  
+  /* ↓ НАША ОБНОВЛЕННАЯ СТРОЧКА: задаем цвет линии ↓ */
+  text-decoration-color: #dc2626;            /* Красивый сдержанный красный цвет линии */
+  
+  /* Если хотите вернуть ярко-красный, замените на: #ff0000 */
+  /* Если хотите, чтобы сам текст тоже становился красным, раскомментируйте строчку ниже: */
+  /* color: #dc2626; */
+
+  text-decoration-thickness: 1px;            /* Тонкая линия */
+  text-underline-offset: 4px;                /* Аккуратный отступ вниз от букв */
+}
+
+
+/* Правый блок с текстом и автором */
+.card-side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;                  /* Расстояние между аватаркой и текстом "Врачи Фрайзинга..." */
+}
+
+/* Сброс лишних отступов у параграфа, чтобы текст стоял аккуратно */
+.card-side-info .lead {
+  margin: 0;
+  padding: 0;
+}
+
+/* Адаптивность для мобильных телефонов */
+@media (max-width: 768px) {
+  .card-and-text-row {
+    flex-direction: column;  /* На телефонах превращается в колонку */
+    align-items: flex-start;
+    gap: 15px;
+	  /* ↓ ИЗМЕНЕННАЯ СТРОЧКА: разворачивает элементы на мобилках в обратном порядке (сначала текст, потом карта) ↓ */
+    flex-direction: column-reverse; 
+  }
+  .single-row-card {
+    max-width: 100%;         /* На телефонах карточка займет всю ширину */
+  }
+}
+/* =========================================================
+   ИДЕАЛЬНОЕ ВЫРАВНИВАНИЕ КАРТОЧЕК НА ВСЕХ ДИСПЛЕЯХ (ЦВЕТ ИСПРАВЛЕН)
+   ========================================================= */
+
+/* 1. На экранах компьютеров и ноутбуков выстраиваем сетку */
+@media (min-width: 769px) {
+    .hero .content {
+        display: grid !important;
+        grid-template-columns: 1fr; 
+        gap: 2px; 
+    }
+
+    .card-and-text-row {
+        display: grid !important;
+        grid-template-columns: 240px 1fr; /* Одинаковая ширина для всех левых карточек */
+        align-items: stretch !important; /* Растягивает карточку до высоты правого текста */
+        margin-bottom: 25px;
+    }
+}
+
+/* 2. Стили для самой карточки с сохранением оригинального серого цвета */
+.single-row-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Центрируем контент по вертикали */
+    align-items: center !important;     /* Центрируем контент по горизонтали */
+    text-align: center;
+    padding: 20px;
+    
+    /* ВОЗВРАЩАЕМ РОДНОЙ ЦВЕТ: легкий серо-голубой оттенок, как на скриншоте */
+    background: #f0f4f8 !important;     
+    
+    border-radius: 8px;
+    height: 100% !important;             /* Принудительно заполняет всю высоту */
+    box-sizing: border-box;
+}
