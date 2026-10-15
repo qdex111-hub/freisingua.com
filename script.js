@@ -49,39 +49,43 @@ document.addEventListener('DOMContentLoaded', () => {
 /* =========================================================
    ОБРАБОТКА КЛИКОВ ДЛЯ ВЫПАДАЮЩЕГО МЕНЮ (DROPDOWN)
    ========================================================= */
+/* =========================================================
+   ИСПРАВЛЕННАЯ ОБРАБОТКА КЛИКОВ ДЛЯ ВЫПАДАЮЩЕГО МЕНЮ (DROPDOWN)
+   ========================================================= */
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownButtons = document.querySelectorAll(".dropdown-btn");
 
   dropdownButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
-      // Останавливаем всплытие, чтобы клик не улетал на уровень документа
+      // Полностью изолируем клик по кнопке
       event.stopPropagation();
       event.preventDefault();
 
       const dropdown = button.closest(".dropdown");
 
-      // Закрываем другие подменю, если они были открыты
+      // Закрываем все остальные меню
       document.querySelectorAll(".dropdown").forEach(function (item) {
         if (item !== dropdown) {
           item.classList.remove("open");
         }
       });
 
-      // Переключаем класс open (открываем или сворачиваем)
+      // Переключаем текущее меню
       dropdown.classList.toggle("open");
     });
   });
 
-  // Клик в ЛЮБОМ месте страницы закрывает открытое подменю
-  document.addEventListener("click", function (event) {
-    if (!event.target.closest('.dropdown')) {
+  // ЖЕЛЕЗНОЕ ЗАКРЫТИЕ: Отслеживаем клики на уровне ВСЕГО окна (window)
+  window.addEventListener("click", function (event) {
+    // Если клик пришелся НЕ на саму кнопку и НЕ на элементы внутри выпадающего списка
+    if (!event.target.closest('.dropdown-btn') && !event.target.closest('.submenu')) {
       document.querySelectorAll(".dropdown").forEach(function (item) {
         item.classList.remove("open");
       });
     }
   });
 
-  // Закрываем подменю, если кликнули на ссылку внутри него
+  // Отдельно закрываем выпадающее подменю, если кликнули на ссылку внутри него
   document.querySelectorAll(".submenu a").forEach(function (link) {
     link.addEventListener("click", function () {
       const dropdown = link.closest(".dropdown");
@@ -91,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 
 // ========================================================
 // КОД ДЛЯ КНОПКИ УСТАНОВКИ НА РАБОЧИЙ СТОЛ (PWA)
