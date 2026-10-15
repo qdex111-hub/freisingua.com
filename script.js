@@ -53,7 +53,6 @@ document.querySelectorAll(".dropdown-btn");
 
 dropdownButtons.forEach(function (button) {
 
-```
 button.addEventListener("click", function (event) {
 
   event.stopPropagation();
@@ -74,7 +73,6 @@ button.addEventListener("click", function (event) {
   dropdown.classList.toggle("open");
 
 });
-```
 
 });
 
@@ -85,4 +83,49 @@ document.addEventListener("click", function () {
 
 });
 
+});
+
+
+// ========================================================
+// КОД ДЛЯ КНОПКИ УСТАНОВКИ НА РАБОЧИЙ СТОЛ (PWA)
+// ========================================================
+let deferredPrompt;
+
+// Ищем вашу кнопку. Скрипт попытается найти её по id="install-btn" или по классу .install-btn
+const installButton = document.getElementById('install-btn') || document.querySelector('.install-btn'); 
+
+// 1. Ловим событие готовности браузера к установке приложения
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // Запрещаем браузеру показывать свое окно раньше времени
+  deferredPrompt = e;  // Сохраняем событие
+  
+  // Если кнопка найдена, делаем её активной/видимой
+  if (installButton) {
+    installButton.removeAttribute('disabled');
+    installButton.style.opacity = '1';
+  }
+});
+
+// 2. Обрабатываем нажатие на кнопку на мобильном телефоне
+if (installButton) {
+  installButton.addEventListener('click', async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt(); // Показываем системное окно установки
+      const { outcome } = await deferredPrompt.userChoice; // Ждем выбора пользователя
+      console.log(`Пользователь выбрал: ${outcome}`);
+      deferredPrompt = null; // Очищаем переменную, так как событие одноразовое
+    } else {
+      // Сообщение-подстраховка для Opera, Safari и режима инкогнито
+      alert('Автоматическая установка заблокирована вашим браузером. Чтобы установить сайт, нажмите на меню браузера (три точки) и выберите пункт "Добавить на главный экран".');
+    }
+  });
+}
+
+// 3. Если приложение успешно установилось — скрываем кнопку
+window.addEventListener('appinstalled', () => {
+  console.log('Сайт успешно добавлен на рабочий стол');
+  if (installButton) {
+    installButton.style.display = 'none';
+  }
+  deferredPrompt = null;
 });
