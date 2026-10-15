@@ -8,11 +8,6 @@ if (toggle && menu) {
     const open = menu.classList.toggle("open");
     toggle.setAttribute("aria-expanded", open);
   });
-  
-  // При клике на обычные ссылки внутри шторки — закрываем её
-  menu.querySelectorAll("> a").forEach(link => {
-    link.addEventListener("click", () => menu.classList.remove("open"));
-  });
 }
 
 document.querySelectorAll("#year").forEach(el => el.textContent = new Date().getFullYear());
@@ -51,12 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================================================================
-   УМНОЕ ЗАКРЫТИЕ ВСЕХ МЕНЮ (И МОБИЛЬНОЙ ШТОРКИ ☰, И ВЫПАДАЮЩИХ ДОКУМЕНТОВ)
+   АБСОЛЮТНОЕ ЗАКРЫТИЕ ПРИ КЛИКЕ В ЛЮБОМ МЕСТЕ ЭкРАНА
    ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownButtons = document.querySelectorAll(".dropdown-btn");
 
-  // Открытие/закрытие выпадающих подменю по клику на их кнопки
+  // Открытие/закрытие выпадающих документов
   dropdownButtons.forEach(function (button) {
     button.addEventListener("click", function (event) {
       event.stopPropagation();
@@ -74,25 +69,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ГЛОБАЛЬНЫЙ КЛИК: Закрывает всё, если кликнули мимо активных элементов
+  // САМЫЙ ГЛАВНЫЙ СЛУШАТЕЛК КЛИКА НА ВСЁМ ОКНЕ
   window.addEventListener("click", function (event) {
     const target = event.target;
 
-    // 1. Проверяем клик для выпадающего меню документов
+    // Если кликнули МИМО кнопки "Документы" и МИМО самого выпадающего списка документов
     if (!target.closest('.dropdown-btn') && !target.closest('.submenu')) {
       document.querySelectorAll(".dropdown").forEach(function (item) {
         item.classList.remove("open");
       });
     }
 
-    // 2. Проверяем клик для всей мобильной шторки ☰
-    // Если шторка открыта, и клик пришёлся НЕ на кнопку ☰, НЕ на кнопку подменю и НЕ на саму ссылку
+    // Если мобильная шторка открыта
     if (menu && menu.classList.contains("open")) {
-      if (!target.closest('.menu-toggle') && (!target.closest('.menu') || target === menu || target.classList.contains('menu-item'))) {
+      // И клик пришёлся НЕ на гамбургер ☰ и НЕ на ссылку (т.е. на любое пустое место сайта или шторки)
+      if (!target.closest('.menu-toggle') && !target.closest('a') && !target.closest('.dropdown-btn')) {
         menu.classList.remove("open");
         if (toggle) toggle.setAttribute("aria-expanded", "false");
         
-        // Попутно закрываем и открытые внутри документы
+        // До кучи закрываем и подменю документов
         document.querySelectorAll(".dropdown").forEach(function (item) {
           item.classList.remove("open");
         });
@@ -100,10 +95,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Закрываем всё при клике на ссылки внутри выпадающего подменю
-  document.querySelectorAll(".submenu a").forEach(function (link) {
+  // Закрываем вообще всё меню при клике на ЛЮБУЮ ссылку (и в шторке, и в подменю)
+  document.querySelectorAll(".menu a, .submenu a").forEach(function (link) {
     link.addEventListener("click", function () {
       if (menu) menu.classList.remove("open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      
       const dropdown = link.closest(".dropdown");
       if (dropdown) dropdown.classList.remove("open");
     });
@@ -134,7 +131,7 @@ if (installButton) {
       console.log(`Пользователь выбрал: ${outcome}`);
       deferredPrompt = null; 
     } else {
-      alert('Автоматическая установка заблокирована вашим браузером. Чтобы установить сайт, нажмите на меню браузера (три точки) и выберите пункт "Добавить на главный экран".');
+      alert('Автоматическая установка заблокирована вашим браузером. Чтобы установить сайт, нажмите на меню браузера (три точки) и выведите пункт "Добавить на главный экран".');
     }
   });
 }
