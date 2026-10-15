@@ -1588,3 +1588,6 @@ h1 {
     position: relative !important;
     z-index: 9999 !important;
 }
+#install-btn {
+    pointer-events: auto !important;
+}
