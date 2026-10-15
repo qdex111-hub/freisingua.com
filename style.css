@@ -1285,14 +1285,7 @@ footer {
    ИСПРАВЛЕНИЯ: ПОДМЕНЮ, ОТСТУПЫ И МОБИЛЬНАЯ ВЕРСИЯ
    ========================================================= */
 
-/* 1. Полностью скрываем выпадающее подменю "Документы" */
-.menu .submenu {
-    display: none !important;
-}
-.menu .dropdown:hover .dropdown-btn span,
-.menu .dropdown.open .dropdown-btn span {
-    transform: none !important;
-}
+
 
 
 /* 2. Приподнимаем заголовок на компьютерах (уменьшаем верхний отступ) */
@@ -1590,4 +1583,28 @@ h1 {
 }
 #install-btn {
     pointer-events: auto !important;
+}
+/* =========================================================
+   УПРАВЛЕНИЕ МЕНЮ ТОЛЬКО ЧЕРЕЗ КЛИК
+   ========================================================= */
+
+/* Отключаем старое появление меню при наведении мышки на ПК */
+.menu .dropdown:hover .submenu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    display: none;
+}
+
+/* Показываем подменю ТОЛЬКО когда JS добавляет класс .open */
+.menu .dropdown.open .submenu {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* Поворачиваем стрелочку вверх только при открытом меню */
+.menu .dropdown.open .dropdown-btn span {
+    transform: rotate(180deg) !important;
 }
