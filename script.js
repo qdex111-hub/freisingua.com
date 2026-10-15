@@ -48,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 /* =========================================================================
    АБСОЛЮТНОЕ ЗАКРЫТИЕ ПРИ КЛИКЕ В ЛЮБОМ МЕСТЕ ЭкРАНА
    ========================================================================= */
+/* =========================================================================
+   АБСОЛЮТНОЕ ЗАКРЫТИЕ ПРИ КЛИКЕ В ЛЮБОМ МЕСТЕ ЭКРАНА И ПРИ СКРОЛЛИНГЕ
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownButtons = document.querySelectorAll(".dropdown-btn");
 
@@ -69,25 +72,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // САМЫЙ ГЛАВНЫЙ СЛУШАТЕЛК КЛИКА НА ВСЁМ ОКНЕ
+  // 1. САМЫЙ ГЛАВНЫЙ СЛУШАТЕЛЬ КЛИКА НА ВСЁМ ОКНЕ (закрывает при клике мимо)
   window.addEventListener("click", function (event) {
     const target = event.target;
 
-    // Если кликнули МИМО кнопки "Документы" и МИМО самого выпадающего списка документов
     if (!target.closest('.dropdown-btn') && !target.closest('.submenu')) {
       document.querySelectorAll(".dropdown").forEach(function (item) {
         item.classList.remove("open");
       });
     }
 
-    // Если мобильная шторка открыта
     if (menu && menu.classList.contains("open")) {
-      // И клик пришёлся НЕ на гамбургер ☰ и НЕ на ссылку (т.е. на любое пустое место сайта или шторки)
       if (!target.closest('.menu-toggle') && !target.closest('a') && !target.closest('.dropdown-btn')) {
         menu.classList.remove("open");
         if (toggle) toggle.setAttribute("aria-expanded", "false");
         
-        // До кучи закрываем и подменю документов
         document.querySelectorAll(".dropdown").forEach(function (item) {
           item.classList.remove("open");
         });
@@ -95,7 +94,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Закрываем вообще всё меню при клике на ЛЮБУЮ ссылку (и в шторке, и в подменю)
+  // 2. НАШ НОВЫЙ БЛОК: АВТОМАТИЧЕСКОЕ ЗАКРЫТИЕ ПРИ ПРОКРУТКЕ (СКРОЛЛЕ) СТРАНИЦЫ
+  window.addEventListener("scroll", function () {
+    // Закрываем выпадающие документы при скролле
+    document.querySelectorAll(".dropdown").forEach(function (item) {
+      if (item.classList.contains("open")) {
+        item.classList.remove("open");
+      }
+    });
+
+    // Закрываем мобильную шторку ☰ при скролле
+    if (menu && menu.classList.contains("open")) {
+      menu.classList.remove("open");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+    }
+  }, { passive: true }); // passive повышает плавность скролла на мобильных устройствах
+
+  // Закрываем вообще всё меню при клике на ЛЮБУЮ ссылку
   document.querySelectorAll(".menu a, .submenu a").forEach(function (link) {
     link.addEventListener("click", function () {
       if (menu) menu.classList.remove("open");
@@ -106,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
 
 // ========================================================
 // КОД ДЛЯ КНОПКИ УСТАНОВКИ НА РАБОЧИЙ СТОЛ (PWA)
