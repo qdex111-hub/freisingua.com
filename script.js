@@ -77,10 +77,15 @@ button.addEventListener("click", function (event) {
 });
 
 // Клик в любом месте страницы закрывает подменю
-document.addEventListener("click", function () {
-
-
-
+// Клик в любом месте страницы закрывает подменю
+document.addEventListener("click", function (event) {
+  // Проверяем, был ли клик совершен за пределами блоков с классом .dropdown
+  if (!event.target.closest('.dropdown')) {
+    // Если кликнули мимо, находим все открытые меню и закрываем их
+    document.querySelectorAll(".dropdown").forEach(function (item) {
+      item.classList.remove("open");
+    });
+  }
 });
 
 });
