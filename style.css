@@ -1060,6 +1060,8 @@ footer {
         border-bottom: 1px solid #ddd;
 
         align-items: stretch;
+		        /* НАША ДОБАВЛЕННАЯ СТРОКА: поднимаем меню на самый верхний слой */
+        z-index: 99999 !important; 
     }
 
 
