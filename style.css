@@ -1583,3 +1583,8 @@ h1 {
     height: 100% !important;             /* Принудительно заполняет всю высоту */
     box-sizing: border-box;
 }
+/* Выносим кнопку установки на самый верхний слой верстки */
+#install-btn {
+    position: relative !important;
+    z-index: 9999 !important;
+}
