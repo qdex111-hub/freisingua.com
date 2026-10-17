@@ -1,84 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Узнайте больше о проекте FreisingUA, наших целях и о том, как мы помогаем интеграции.">
-  <title>О нас — FreisingUA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Ваше семантическое ядро в мета-тегах страницы -->
+    <title>О нас — FreisingUA | Некоммерческая организация помощи в Германии (Бавария)</title>
+    <meta name="description" content="Узнайте больше о проекте FreisingUA. Мы — некоммерческая организация в Баварии, помогающая в бытовых, медицинских вопросах, оформлении апостиля и поиске госорганов Германии.">
 
-  <!-- ============================= -->
-  <!-- OPEN GRAPH — ПРЕДПРОСМОТР В WHATSAPP -->
-  <!-- ============================= -->
-  <meta property="og:title" content="О нас — FreisingUA">
-  <meta property="og:description" content="Узнайте больше о проекте FreisingUA, наших целях и о том, как мы помогаем интеграции.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freisingua.com">
-  <meta property="og:site_name" content="Freising UA">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:image" content="https://freisingua.com">
-  <meta property="og:image:secure_url" content="https://freisingua.com">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+    <!-- Точный канонический тег вашей страницы -->
+    <link rel="canonical" href="https://freisingua.com" />
 
-  <!-- ============================= -->
-  <!-- СТИЛИ, ИКОНКА И ИСПРАВЛЕННАЯ АНАЛИТИКА -->
-  <!-- ============================= -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <!-- Настройка красивого превью (Open Graph) в Telegram / WhatsApp -->
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="О нас — FreisingUA | Помощь мигрантам в Германии">
+    <meta property="og:description" content="Помощь в бытовых и медицинских вопросах в Баварии. Ответы по заверению документов, апостилю и адреса госорганов Германии.">
+    <meta property="og:url" content="https://freisingua.com"> 
+    <meta property="og:site_name" content="FreisingUA">
+    <meta property="og:image" content="https://freisingua.com">
 
-  <!-- Исправленный тег Google Analytics -->
-  <script async src="https://googletagmanager.com"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LP3S832QSP');
-  </script>
+    <!-- Подключение файла стилей, который вы прислали -->
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Правильный канонический URL для страницы О Нас -->
-  <link rel="canonical" href="https://www.freisingua.com/about.html" />
+    <!-- Интегрированная Google Аналитика (GA4) -->
+    <script async src="https://googletagmanager.com"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'G-LP3S832QSP');
+    </script>
 </head>
-
-
 <body>
 
-<header class="header">
-  <a class="logo" href="index.html">Freising<span>UA</span> <br>
-   <span class="logo-subtext"> Bayern</span>
-  </a> 
-  
-  
-  
-  <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
-  <nav class="menu">
-    <a href="index.html" target="_blank">Главная</a>
-	<a class="active" href="about.html" target="_blank">О нас</a>
-    <a href="gallery.html" target="_blank">Галерея</a>
-	<a href="documents.html" target="_blank">Документы</a>
-    
-	<a href="contacts.html" target="_blank">Контакты</a>
-	<a href="TRANSLATORS.html" target="_blank">Переводчики</a>
-	<a href="transportation.html" target="_blank">ПЕРЕЗЧВОЗЧИКИ</a>
-  </nav>
-</header>
-<main class="layout">
-  <section class="main-column page">
-    <div class="number">-</div>
-    <div class="content">
-      <p class="eyebrow">О НАС</p><h1>Кто<br>мы</h1>
-      <p class="lead">Здесь можно разместить подробную информацию о человеке, компании, проекте или организации.</p>
-      <div class="cards">
-        <article><b>01</b><h3>Просто</h3><p>Понятная структура и удобная навигация.</p></article>
-        <article><b>02</b><h3>Современно</h3><p>Чистый минималистичный визуальный стиль.</p></article>
-        <article><b>03</b><h3>Адаптивно</h3><p>Корректное отображение на компьютере и телефоне.</p></article>
-      </div>
+    <!-- Шапка сайта (HEADER) — Строго по классам из CSS -->
+    <div class="header">
+        <div class="logo">Freising UA <span>Bayern</span></div>
+        
+        <!-- Кнопка бургер-меню для мобильной версии -->
+        <button class="menu-toggle">☰</button>
+        
+        <!-- Главное навигационное меню -->
+        <div class="menu">
+            <a href="index.html">Главная</a>
+            <a href="about.html" class="active">О нас</a>
+            <a href="gallery.html">Галерея</a>
+            
+            <a href="documents.html" target="_blank">ДОКУМЕНТЫ</a>
+            
+            <a href="contacts.html">Контакты</a>
+            <a href="translators.html">Переводчики</a>
+            <a href="carriers.html">ПЕРЕЗЧВОЗЧИКИ</a>
+        </div>
     </div>
-  </section>
-  <aside class="side-column"><div><p class="eyebrow">ИНФОРМАЦИЯ</p><h2>О<br>проекте</h2>
-  <p>Этот блок можно использовать для краткой дополнительной информации.</p>
-  </div><div class="side-bottom"><span>02</span><span>Responsive by QDEX project anna</span></div></aside>
-</main>
-<footer><span>© <span id="year"></span> FreisingUA</span><span>О нас</span></footer>
+
+    <!-- Основной макет страницы (LAYOUT) — Две колонки из CSS -->
+    <div class="layout">
+        
+        <!-- Левая (Основная) колонка контента -->
+        <div class="main-column">
+            <!-- Счетчик/Номер страницы, если используется в шаблоне -->
+            <div class="number">01</div>
+            
+            <div class="content">
+                <div class="eyebrow">О НАС</div>
+                
+                <!-- H1: Главный высокочастотный запрос страницы -->
+                <h1>Кто мы</h1>
+                
+                <p class="lead">
+                    <strong>FreisingUA — это некоммерческая организация в Германии</strong> для помощи в бытовых и медицинских вопросах. 
+                    Наша главная цель — протянуть руку поддержки каждому соотечественнику и помочь успешно адаптироваться к жизни в Баварии.
+                </p>
+
+                <!-- Блок карточек преимуществ 01, 02, 03 по вашей сетке .cards -->
+                <div class="cards">
+    <article>
+        <b>01</b>
+        <h3>Интеграция</h3>
+        <p>Помогаем заполнять немецкие формуляры, разбираться с письмами от ведомств и решать повседневные бытовые вопросы в Баварии.</p>
+    </article>
+    <article>
+        <b>02</b>
+        <h3>Медицина</h3>
+        <p>Информационная поддержка при взаимодействии со страховыми кассами (Krankenkasse), поиске русскоязычных врачей и получении терминов.</p>
+    </article>
+    <article>
+        <b>03</b>
+        <h3>Документы</h3>
+        <p>Пошаговые руководства по процедуре легализации, нотариального перевода и проставлению штампа Апостиль (Apostille) на официальные бланки.</p>
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <!-- Правая (Боковая) колонка контента -->
+        <div class="side-column">
+            <div class="content">
+                <div class="eyebrow">ИНФОРМАЦИЯ</div>
+                
+                <!-- H2: Среднечастотный тематический запрос -->
+                <h2>О проекте</h2>
+                
+                <p class="lead">
+                    Здесь также можно найти ответы по заверению документов (АПОСТИЛЬ) и точные адреса государственных организаций Германии.
+                </p>
+                
+                <p>
+                    Мы регулярно актуализируем базу знаний по интеграционным ведомствам (Jobcenter, Ausländerbehörde, Bürgeramt), правилам оформления медицинских терминов и легализации иностранных документов в Баварии.
+                </p>
+            </div>
+
+            <!-- Блок нижней части боковой панели из CSS -->
+            <div class="side-bottom">
+                <span>FREISING UA</span>
+                <span>2026</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Подвал сайта (FOOTER) -->
+    <footer>
+        <div>&copy; FreisingUA О нас</div>
+        <div> Responsive by QDEX project anna</div>
+    </footer>
 <script src="script.js"></script>
+<script src="pwa-button.js?v=2"></script>
 </body>
 </html>
