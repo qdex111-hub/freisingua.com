@@ -1,533 +1,224 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Семантическое ядро для главной страницы проекта FreisingUA -->
+    <title>FreisingUA — Информационный сайт для украинцев во Фрайзинге (Бавария)</title>
+    <meta name="description" content="Информационный портал волонтерской помощи для украинцев во Фрайзинге (Бавария, Германия). Актуальная информация по бытовым вопросам, адреса врачей, документы и гайды.">
 
-  <title>Freising UA</title>
-  <meta name="description" content="Информационный сайт Freising UA для украинцев во Фрайзинге и Баварии">
-  <meta name="google-adsense-account" content="ca-pub-8481894872765748">
+    <!-- Точный канонический адрес главной страницы -->
+    <link rel="canonical" href="https://freisingua.com" />
 
- <!-- ============================= -->
-  <!-- Oустановка на раб стол -->
-  <!-- ============================= -->			 
+    <!-- Настройка превью Open Graph для Telegram и WhatsApp -->
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FreisingUA | Помощь украинцам во Фрайзинге (Бавария)">
+    <meta property="og:description" content="Полезная информация для интеграции в Германии. Бытовые и медицинские вопросы, присяжные переводчики и расписания перевозчиков.">
+    <meta property="og:url" content="https://freisingua.com"> 
+    <meta property="og:site_name" content="FreisingUA">
+    <meta property="og:image" content="https://freisingua.com">
 
+    <!-- Подключение ваших оригинальных стилей -->
+    <link rel="stylesheet" href="style.css">
 
-
-<link rel="manifest" href="manifest.json">
-
-
-
-  <!-- ============================= -->
-  <!-- КОНЕЦOустановка на раб стол -->
-  <!-- ============================= -->		 
-
- 
-
-
-
-  <!-- ============================= -->
-  <!-- OPEN GRAPH — ПРЕДПРОСМОТР -->
-  <!-- ============================= -->
-  <meta property="og:title" content="Freising UA">
-  <meta property="og:description" content="Информационный сайт для украинцев во Фрайзинге и Баварии">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freisingua.com/">
-  <meta property="og:site_name" content="Freising UA">
-  <meta property="og:locale" content="ru_RU">
-
-  <!-- КАРТИНКА ПРЕДПРОСМОТРА (Без пробелов и двойных косых линий) -->
-  <meta property="og:image" content="https://freisingua.com/preview.jpg">
-  <meta property="og:image:secure_url" content="https://freisingua.com/preview.jpg">
-  <meta property="og:image:type" content="image/jpeg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Freising UA — информационный сайт для украинцев во Фрайзинге">
-
-  <!-- ============================= -->
-  <!-- TWITTER / X -->
-  <!-- ============================= -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Freising UA">
-  <meta name="twitter:description" content="Информационный сайт для украинцев во Фрайзинге и Баварии">
-  <meta name="twitter:image" content="https://freisingua.com/preview.jpg">
-  <meta name="twitter:image:alt" content="Freising UA">
-
-  <!-- ============================= -->
-  <!-- СТИЛИ, ИКОНКА И АНАЛИТИКА -->
-  <!-- ============================= -->
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP3S832QSP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LP3S832QSP');
-  </script>
-
-  <!-- Исправленный канонический URL -->
- >
-<link rel="canonical" href="https://freisingua.com" />
-
+    <!-- Интегрированная Google Analytics 4 (GA4) -->
+    <script async src="https://googletagmanager.com"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LP3S832QSP');
+    </script>
 </head>
-
-
 <body>
 
+    <!-- Шапка сайта (HEADER) -->
+    <div class="header">
+        <div class="logo">Freising UA <span>Bayern</span></div>
+        <button class="menu-toggle">☰</button>
+        <div class="menu">
+            <a href="index.html" class="active">Главная</a>
+            <a href="about.html" target="_blank">О нас</a>
+            <a href="gallery.html" target="_blank">Галерея</a>
+            <div class="menu-item dropdown">
+                <button class="dropdown-btn">Документы <span>▼</span></button>
+                <div class="submenu">
+                    <a href="apostil.html" target="_blank">Апостиль</a>
+                    <a href="citizenship.html" target="_blank">Гражданство</a>
+                </div>
+            </div>
+            <a href="contacts.html" target="_blank">Контакты</a>
+            <a href="TRANSLATORS.html" target="_blank">Переводчики</a>
+            <a href="transportation.html" target="_blank">Перевозчики</a>
+        </div>
+    </div>
+
+    <!-- Основной макет страницы (LAYOUT) -->
+    <div class="layout">
+        
+        <!-- Левая (Основная) колонка контента -->
+        <div class="main-column">
+            
+            <div class="content">
+                <div class="eyebrow">ИНФОРМАЦИОННЫЙ САЙТ</div>
+                
+                <h1>Україна понад усе!</h1>
+                
+                <p style="font-size: 13px; color: #dc2626; font-weight: bold; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    70 ВСЕ МАТЕРИАЛЫ И ДОКУМЕНТЫ ВЗЯТЫ ИЗ ОТКРЫТЫХ ИСТОЧНИКОВ.
+                </p>
+
+                <p class="lead" style="font-style: italic; font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 30px;">
+                    Сайт создан в помощь украинцев во Фрайзинге и для украинцев, Бавария, Германия. Здесь можно следить за жизнью украинцев in Germany, а также <strong>скачать нужные документы</strong>. Узнать куда обращаться по бытовым и медицинским вопросам и найти переводчика на ваши термины.
+                </p>
+
+                <!-- Синяя кнопка установки приложения -->
+                <a href="#" id="install-btn" class="button" style="display: block; width: 100%; max-width: 100%; background: #0056b3; color: #fff; text-align: center; padding: 14px; border-radius: 4px; font-size: 14px; font-weight: bold; text-transform: none; border: none; margin-bottom: 40px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 9999;">
+                    Установить на рабочий стол Freising UA Android
+                </a>
+                <!-- БЛОК 1: СЕМЕЙНЫЙ ВРАЧ СИНГЕЛЬ (Вся левая карточка ведет на WhatsApp) -->
+                <div class="card-and-text-row">
+                    <a href="https://praxis-sc.de" target="_blank" class="single-row-card">
+                        <div class="author-block" style="margin-bottom: 15px; justify-content: center;">
+                            <div class="author-avatar" style="background-color: #25D366;">I</div>
+                            <div class="author-info" style="text-align: left;">
+                                <span class="author-name" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #777;">СЕМЕЙНЫЙ ВРАЧ</span>
+                                <span class="author-date">2026</span>
+                            </div>
+                        </div>
+                        <img src="FOTO/free-icon-doctor-3678070.png" alt="Praxis Singel Chowanitz" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; display: block; margin-left: auto; margin-right: auto;">
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">ЕДИНСТВЕННЫЙ РУССКО-ГОВОРЯЩИЙ<br>сайт</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 10px; color: #444; margin-top: 0 !important;">
+                            👩‍⚕️ <em>Praxis Singel Chowanitz в Фрайзинге</em>
+                        </p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6; margin-bottom: 10px;">
+                            Врачи практики: <strong>Marija Singel (РУССКО-ГОВОРЯЩИЙ)</strong> (внутренняя медицина), <strong>Magdalena Chowanitz</strong> (общая медицина) и др. <br>
+                            Запись через WhatsApp к Инге (на немецком): 
+                            <a href="https://wa.me" target="_blank" style="text-decoration: underline; color: #25D366; font-weight: bold;">+49 176 5177 37 23</a>.
+                        </p>
+                        <a href="https://wa.me" target="_blank" class="button" style="background: #25D366; color: #fff; margin: 0; max-width: max-content; padding: 10px 18px;">ЗАПИСЬ ЧЕРЕЗ WhatsApp СЮДА ЖМИ</a>
+                    </div>
+                </div>
+
+                <!-- БЛОК 2: СПИСОК ВРАЧЕЙ (Вся карточка ведет в документы) -->
+                <div class="card-and-text-row">
+                    <a href="documents.html" target="_blank" class="single-row-card">
+                        <div class="card-icon">🩺</div>
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">ВРАЧИ ФРАЙЗИНГА 2026</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 5px; color: #444;">Список профильных врачей Фрайзинга и окрестностей</p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6; margin-bottom: 10px;">
+                            Для удобства поиска мы собрали структурированную базу медицинских контактов округа. Посмотреть и скачать список можно в разделе документов.
+                        </p>
+                        <a href="documents.html" target="_blank" class="button" style="background: #e8e9e4; color: #111; margin: 0; max-width: max-content; padding: 10px 18px;">ПЕРЕЙТИ В ДОКУМЕНТЫ</a>
+                    </div>
+                </div>
+
+                <!-- БЛОК 3: ГРАЖДАНСТВО (Карточка ведет на официальный портал Бавария) -->
+                <div class="card-and-text-row">
+                    <a href="citizenship.html" target="_blank" class="single-row-card">
+                        <div class="card-icon">📜</div>
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">ГРАЖДАНСТВА 2026</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 5px; color: #444;">Оформление гражданства (Staatsangehörigkeit) в Германии</p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6;">
+                            Подача заявления: онлайн через портал Баварии или по почте. Срок обработки: 12–16 месяцев!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- БЛОК 4: АПОСТИЛЬ (Карточка ведет на страницу апостиля) -->
+                <div class="card-and-text-row">
+                    <a href="apostil.html" target="_blank" class="single-row-card">
+                        <div class="card-icon">📋</div>
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">АПОСТИЛЬ 2026</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 5px; color: #444;">Информация, как сделать АПОСТИЛЬ и заверение</p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6; margin-bottom: 8px;">
+                            Засвідчення доĸументів у Баварії для Німеччини та України. Пошаговые инструкции легализации.
+                        </p>
+                        <a href="apostil.html" target="_blank" class="button" style="background: #e8e9e4; color: #111; margin: 0; max-width: max-content; padding: 10px 18px;">ПОДРОБНЕЕ ОБ АПОСТИЛЕ</a>
+                    </div>
+                </div>
+
+                <!-- БЛОК 5: TAFEL (Карточка ведет на страницу контактов/карты) -->
+                <div class="card-and-text-row">
+                    <a href="https://freisinger-tafel.de" target="_blank" class="single-row-card">
+                        <div class="card-icon">🛒</div>
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">TAFEL 2026</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 5px; color: #444;">🛒 Расписание выдачи продуктов питания Tafel Freising</p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6;">
+                            Адрес: Каммергассе 14, Фрайзинг. Среда: 09:00 - 11:30 | Четверг: 14:00 - 15:30.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- БЛОК 6: ПЕРЕВОДЧИКИ (Карточка ведет на страницу переводчиков) -->
+                <div class="card-and-text-row">
+                    <a href="TRANSLATORS.html" target="_blank" class="single-row-card">
+                        <div class="card-icon">✍️</div>
+                        <div class="card-title" style="font-size: 13px; font-weight: bold; text-transform: uppercase;">ПЕРЕВОДЧИКИ 2026</div>
+                    </a>
+                    <div class="card-side-info">
+                        <p class="lead" style="font-size: 15px; font-weight: bold; margin-bottom: 5px; color: #444;">Проверенные присяжные и нотариальные переводчики</p>
+                        <p style="font-size: 14px; color: #111; line-height: 1.6; margin-bottom: 8px;">
+                            Список сертифицированных специалистов для перевода личных документов на немецкий язык.
+                        </p>
+                        <a href="TRANSLATORS.html" target="_blank" class="button" style="background: #e8e9e4; color: #111; margin: 0; max-width: max-content; padding: 10px 18px;">СПИСОК ПЕРЕВОДЧИКОВ</a>
+                    </div>
+                </div>
 
 
+            </div>
+        </div>
 
-<header class="header">
-
-  <!-- ЛОГОТИП -->
-
-  <a class="logo" href="index.html">
-    Freising<span>UA</span><br>
-    <span class="logo-subtext">Bayern</span>
-  </a>
-
-
-
-
-
-  <!-- КНОПКА МОБИЛЬНОГО МЕНЮ -->
-
-<button
- class="menu-toggle"
- aria-label="Открыть меню"
- aria-expanded="false">
-☰ </button>
-
-  <!-- ГЛАВНОЕ МЕНЮ -->
-
- <nav class="menu">
-
-<a class="active" href="index.html">Главная</a>
-
-<a href="about.html" target="_blank">О нас</a>
-
-
-
-<a href="gallery.html" target="_blank">Галерея</a>
-
-<a href="documents.html" target="_blank">ДОКУМЕНТЫ</a>
-
-
-
-<a href="contacts.html" target="_blank">Контакты</a>
-
-<a href="TRANSLATORS.html" target="_blank">Переводчики</a>
-
-<a href="transportation.html" target="_blank">ПЕРЕВОЗЧИКИ</a>
-
-
-
-
-
-</nav>
-
-
-
-</header>
-
-
-<main class="layout">
-  <section class="main-column hero">
-
+        <!-- Правая (Боковая) колонка — ОСТАВЛЕНА ПОЛНОСТЬЮ В ИСХОДНОМ ВИДЕ -->
+        <!-- Правая (Боковая) колонка — ИСПРАВЛЕНО: возвращено реальное видео -->
+<div class="side-column">
     <div class="content">
-      <p class="eyebrow">ИНФОРМАЦИОННЫЙ САЙТ</p>
-      <h1><marquee behavior="scroll" direction="left" scrollamount="5" style="padding-bottom: 13px; overflow: visible !important;">Україна понад усе!</marquee>
-
-</h1>
-  
-    
-	<!-- с ----------------------------------------------------------------------------------------------------------> 
-      <p class="lead"><strong><p style="color: red;">70 ВСЕ МАТЕРИАЛЫ И ДОКУМЕНТЫ ВЗЯТЫ ИЗ ОТКРЫТЫХ ИСТОЧНИКОВ.</p></strong><br>
-	  
-	 <em> Сайт создан в помощь украинцев во Фрайзинге и для украинцев,Бавария,Германия. Здесь можно следить за жизнью украинцев в Германии,
-	  а также <u><strong>скачать нужные документы</strong></u>. Узнать куда обращаться по бытовым и медицинским вопросам и найти переводчика на ваши термины.<em></p>
-	  <br>
-	  
-	 <!-- с ----------------------------------------------------------------------------------------------------------> 
-	
-
-	
-
-<!-- Кнопка -->
-
-
-<button id="install-btn" style="display: block !important; visibility: visible !important; width: 100% !important; max-width: 100% !important; margin: 15px 0 !important; padding: 14px !important; background: #0057b7 !important; color: white !important; border: none !important; border-radius: 5px !important; font-weight: bold !important; cursor: pointer !important; position: static !important; transform: none !important; pointer-events: auto !important; z-index: 99999 !important;">Установить на рабочий стол Freising UA Android</button>
-
-
-<!-- Подсказка -->
-<div id="opera-safari-hint" style="display: none; padding: 10px; margin: 10px 0; background: #fff3cd; 
-color: #856404; border: 1px solid #ffeeba; border-radius: 5px; font-size: 14px; text-align: center; font-weight: 500;"></div>
-
-
-<!-- конецКнопка -->
-	 
-<!-- КАРТОЧКА СЛЕВА, ТЕКСТ И ИНФОРМАЦИЯ СПРАВА (ДЛЯ СЕМЕЙНОГО ВРАЧА) ----------------------------------------->
-<div class="card-and-text-row">
-<!-- 1. Карточка врача (слева) -->
-  <a href="https://praxis-sc.de" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-doctor-3678070.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>ЕДИНСТВЕННЫЙ РУССКО-ГОВОРЯЩИЙ СЕМЕЙНЫЙ ВРАЧЬ</strong> В ФРАЙЗИНГЕ</div><br>
-	Marija Singel</a>
-<!-- 2. Блок с информацией о врачах практики (справа) -->
-  <div class="card-side-info">
-        <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇</div> 
-      <div class="author-info">
-        <span class="author-name">СЕМЕЙНЫЙ ВРАЧЬ </span>
-        <span class="author-date"> 2026</span>
-      </div>
-    </div>
-    <!-- Информационная плашка -->
-    <div class="author-block" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-flex;">
-      <span class="author-name" style="color: #0f172a; font-weight: 600;">👩‍⚕️ Praxis Singel Chowanitz в Фрайзинге</span>
-    </div>
-<!-- Список врачей -->
-    <p class="lead"> 
-      Врачи практики: <strong>Marija Singel(РУССКО-ГОВОРЯЩИЙ)</strong> (внутренняя медицина), 
-      <strong>Magdalena Chowanitz</strong> (общая медицина) и др. <br>
-      <strong>Записаться на прием (Termin buchen) можно на официальном сайте практики.</strong>
-	  <br>
-	   <span style="color: #0d6efd;">ЗАПИСЬ ЧЕРЕЗ WhatsApp</span><br> сообщения попадают на "рецепшн" к Инге<br>
-	  писать нужно на немецком<br>
-	  +49 176 5177 37 23 <br>
-	  В рабочее время записывают очень оперативно и Вам отписываются когда назначен ТЕРМИН<br>
-	  <a href="https://wa.me/+4917651773723" target="_blank" title="Написать в WhatsApp" ><span style="color: #0d6efd;"><u>ЗАПИСЬ ЧЕРЕЗ WhatsApp СЮДА ЖМИ</u></span></a>
- </p>
-  </div>
-
-</div>
-<!-- КОНЕЦ БЛОКА СЕМЕЙНОГО ВРАЧА ------------------------------------------------------------------------------------->	  
-	  
-	 <!-- БЛОК Врачи Фрайзинга -->
-
-<!-- КАРТОЧКА СЛЕВА, ТЕКСТ И АВТОР СПРАВА -->
-<div class="card-and-text-row">
-
-  <!-- 1. Сама карточка (первая, слева) -->
-  <a href="documents.html" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-medical-team.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>ВРАЧИ ФРАЙЗИНГА и окрестностей</strong></div>
-  </a>
-
-  <!-- 2. Блок с автором и описанием (второй, справа) -->
-  <div class="card-side-info">
-    
-    <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇︎</div> 
-      <div class="author-info">
-        <span class="author-name">ВРАЧИ ФРАЙЗИНГА</span>
-        <span class="author-date"> 2026</span>
-      </div>
+        
+        <!-- Вместо тега img возвращаем полноценный тег video с автозапуском -->
+        <figure style="margin-bottom: 20px; overflow: hidden; border-radius: 4px; background: #ddd;">
+            <video autoplay loop muted playsinline style="width: 100%; height: auto; display: block;">
+                <source src="Video\fresingFLY.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </figure>
+        
+        <h3 style="font-size: 20px; font-weight: 700; text-align: center; line-height: 1.3; margin-bottom: 40px; font-style: italic;">
+            Фрайзинг с высоты птичьего полетa.
+        </h3>
+        
+        <div class="eyebrow">НАВИГАЦИЯ</div>
+        <h2>P</h2>
     </div>
 
-    <!-- Текст под автором -->
-    <p class="lead"> 
-      Врачи Фрайзинга и окрестностей<br>
-      <strong>Посмотреть а также скачать список можно в разделе ДОКУМЕНТЫ</strong>
-    </p>
- </div>
-</div>
-<!-- КОНЕЦ БЛОКА Врачи Фрайзинга --> 
-	  
-	  <!-- КАРТОЧКА СЛЕВА, ТЕКСТ И ИНФОРМАЦИЯ СПРАВА (ДЛЯ citizenship) ----------------------------------------->
-<div class="card-and-text-row">
-
-  <!-- 1. Карточка врача (слева) -->
-  <a href="citizenship.html" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-citizenship.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>ГРАЖДАНСТВА<br>Staatsangehörigkeit</strong></div>
-  </a>
-
-  <!-- 2. Блок с информацией о врачах практики (справа) -->
-  <div class="card-side-info">
-        <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇</div> 
-      <div class="author-info">
-        <span class="author-name">ГРАЖДАНСТВА </span>
-        <span class="author-date"> 2026</span>
-      </div>
-    </div>
-    <!-- Информационная плашка -->
-    <div class="author-block" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-flex;">
-      <span class="author-name" style="color: #0f172a; font-weight: 600;">Для всех беженцев,  которые планируют оставаться в Германии. </span>
-    </div>
-
-    <!-- Подача заявления -->
-    <p class="lead"> 
-  <strong>Подача заявления: онлайн через портал Баварии или по почте с формами. 
-Лучше подавать заявление со всеми полными документами! <br>
-Срок обработки: 12–16 месяцев!</strong>
-    </p>
-
-  </div>
-
-</div>
-<!-- КОНЕЦ БЛОКАcitizenship------------------------------------------------------------------------------------->	 
-	 
-	 
-	 <!-- КАРТОЧКА СЛЕВА, ТЕКСТ И ИНФОРМАЦИЯ СПРАВА (ДЛЯ аАПОСТИЛЬ) ----------------------------------------->
-<div class="card-and-text-row">
-
-  <!-- 1. Карточка врача (слева) -->
-  <a href="apostil.html" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-seal-certificate.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>АПОСТИЛЬ</strong></div>
-  </a>
-
-  <!-- 2. Блок с информацией о врачах практики (справа) -->
-  <div class="card-side-info">
-        <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇</div> 
-      <div class="author-info">
-        <span class="author-name">АПОСТИЛЬ</span>
-        <span class="author-date"> 2026</span>
-      </div>
-    </div>
-    <!-- Информационная плашка -->
-    <div class="author-block" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-flex;">
-      <span class="author-name" style="color: #0f172a; font-weight: 600;">Инормация как зделать АПОСТИЛЬ</span>
-    </div>
-
-    <!-- Список врачей -->
-    <p class="lead"> 
-  <strong>Засвідчення доĸументів
-
-- Яĸщо Вам необхідний доĸумент для Німеччини:<br>
-можна зробити переĸлад у повіреного переĸладача, його переĸлад уже буде засвідчено.<br>
-- Яĸщо Вам необхідний доĸумент для Уĸраїни.</strong>
-    </p>
-
-  </div>
-
-</div>
-<!-- КОНЕЦ БЛОКААПОСТИЛЬ------------------------------------------------------------------------------------->	 
-	 
-	 
-
-
-  
-  
-  
-<!-- КАРТОЧКА СЛЕВА, ТЕКСТ И ИНФОРМАЦИЯ СПРАВА (ДЛЯ TAFEL) ------------------------------------------------------------>
-<div class="card-and-text-row">
-
-  <!-- 1. Карточка TAFEL (слева) -->
-  <a href="https://freisinger-tafel.de" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-food-and-drink.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>TAFEL</strong></div>
-  </a>
-
-  <!-- 2. Блок с информацией о выдаче продуктов (справа) -->
-  <div class="card-side-info">
-        <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇</div> 
-      <div class="author-info">
-        <span class="author-name">TAFEL</span>
-        <span class="author-date"> 2026</span>
-      </div>
-    </div>
-    <!-- Краткий заголовок-подсказка -->
-    <div class="author-block" style="background: #f1f5f9; padding: 6px 12px; border-radius: 6px; display: inline-flex;">
-      <span class="author-name" style="color: #0f172a; font-weight: 600;">TAFEL<br>🛒 Расписание выдачи продуктов</span>
-    </div>
-
-    <!-- Текст с часами работы и адресом -->
-    <p class="lead"> 
-      <strong>Каммергассе 14, Фрайзинг</strong> (недалеко от здания VHS)<br>
-      Среда: 09:00 - 11:30 | Четверг: 14:00 - 15:30
-    </p>
-
-  </div>
-
-</div>
-<!-- КОНЕЦ БЛОКА TAFEL -------------------------------------------------------------------------------------------------------->
-
-
-
-
-
-
-<!-- КАРТОЧКА СЛЕВА, ТЕКСТ И АВТОР СПРАВА (ДЛЯ ПЕРЕВОДЧИКОВ) -->
-<div class="card-and-text-row">
-
-  <!-- 1. Карточка Переводчиков (слева) -->
-  <a href="TRANSLATORS.html" target="_blank" class="single-row-card">
-    <div class="card-icon">
-      <img src="FOTO/free-icon-translate.png" alt="Иконка">
-    </div>
-    <div class="card-title"><strong>ПРОВЕРЕННЫЕ ПЕРЕВОДЧИКИ</strong></div>
-  </a>
-
-  <!-- 2. Блок с автором и описанием (справа) -->
-  <div class="card-side-info">
-    
-    <!-- WhatsApp-блок автора -->
-    <div class="author-block">
-      <div class="author-avatar">⬇</div> 
-      <div class="author-info">
-        <span class="author-name">ПЕРЕВОДЧИКИ </span>
-        <span class="author-date"> 2026</span>
-      </div>
-    </div>
-
-    <!-- Текст под автором -->
-    <p class="lead"> 
-      ПЕРЕВОДЧИКИ смотреть скачать<br>
-      <strong>Узнать подробности можно в разделе ПЕРЕВОДЧИКИ</strong>
-	  <br>или нажать кнопку рядом
-    </p>
-
-  </div>
-
-</div>
-<!-- КОНЕЦ БЛОКА ПЕРЕВОДЧИКОВ -->
- 
-
-   
-
-   
-   
-
-	   
-
- </div>
-  </section>
-
-  <aside class="side-column">
-   <!-- ВИДЕО НАЧАЛО ---------------------------------------------------------------------------------------------------------->  
-  
-  
-   
-
-<!-- Начало блока с автозапуском и повтором -->
-<div style="display: flex; flex-direction: column; align-items: center; max-width: 640px; margin: 20px auto; padding: 0 15px; box-sizing: border-box;">
-  
-  <!-- АВТОЗАПУСК + ПОВТОР + БЕЗ ЗВУКА -->
-  <video autoplay muted loop playsinline style="width: 100%; height: auto; border-radius: 8px; display: block;">
-    <source src="Video\fresingFLY.mp4" type="video/mp4">
-    Ваш браузер не поддерживает видео.
-  </video>
-
-  <!-- ТЕКСТ ПОД НИМ -->
-  <p style="margin: 15px 0 0 0; font-size: 24px; font-weight: bold; font-family: sans-serif; text-align: center; color: #333;">
-    Фрайзинг с высоти птичего полета.
-  </p>
-  
-</div>
-<!-- Конец блока -->
-
-<!-- ВИДЕО КОНЕЦ ---------------------------------------------------------------------------------------------------------->
-
-
-   <div>
-      <p class="eyebrow">НАВИГАЦИЯ</p>
-      <h2></h2>
-      <p>Р</p>
-    </div>
     <div class="side-bottom">
-      
-      <span>Responsive by QDEX project a</span>
+        <span>Responsive by QDEX project a</span>
     </div>
-  </aside>
-</main>
-
-<footer><span>© <span id="year"></span> FreisingUA01</span><span>Главная </span></footer>
-
-<script src="./script.js?v=2"></script>
+</div>
 
 
-<!-- скрипт дли кнопки ДОБАВИТЬ НА ГЛАВНЫЙ---------------------------------------------------------------------------------------------------------->
-<script>
-  // 1. Регистрация Service Worker
-  if ('serviceWorker' in navigator && !navigator.serviceWorker.controller) {
-    window.addEventListener('load', function() {
-      navigator.serviceWorker.register('./sw.js?v=1', { scope: './' })
-        .then(function(reg) { console.log('Service Worker успешно активен!'); })
-        .catch(function(err) { console.log('Ошибка SW:', err); });
-    });
-  }
-
-  // 2. Логика для работы кнопки установки
-  var deferredPrompt = null;
-  var clickedTooEarly = false; // Флаг на случай, если пользователь нажал кнопку слишком рано
-
-  window.addEventListener('beforeinstallprompt', function(e) {
-    e.preventDefault();
-    deferredPrompt = e;
-    console.log('Браузер готов к установке приложения Freising UA!');
-    
-    // Если пользователь уже нажимал кнопку ранее, пока браузер спал — мгновенно открываем установку
-    if (clickedTooEarly) {
-      executeInstallation();
-    }
-  });
-
-  // Функция для запуска системного окна установки
-  function executeInstallation() {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(function(choiceResult) {
-      console.log('Пользователь выбрал: ' + choiceResult.outcome);
-      deferredPrompt = null;
-      var installBtn = document.getElementById('installBtn');
-      if (installBtn) { installBtn.style.display = 'none'; }
-    });
-  }
-
-  // Привязываем клик к кнопке по её ID
-  window.addEventListener('DOMContentLoaded', function() {
-    var installBtn = document.getElementById('installBtn');
-    
-    if (installBtn) {
-      installBtn.addEventListener('click', function() {
-        if (deferredPrompt) {
-          // Если браузер уже готов — сразу показываем окно установки
-          executeInstallation();
-        } else {
-          // Если браузер ещё думает — включаем режим ожидания (окно откроется само через секунду)
-          clickedTooEarly = true;
-          console.log('Клик зафиксирован, ждем ответа от браузера...');
-        }
-      });
-    }
-  });
-
-  // Скрываем кнопку, если приложение уже успешно установлено
-  window.addEventListener('appinstalled', function() {
-    var installBtn = document.getElementById('installBtn');
-    if (installBtn) { installBtn.style.display = 'none'; }
-    deferredPrompt = null;
-  });
-</script>
 
 
-<!-- КОНЕЦскрипт дли кнопки ДОБАВИТЬ НА ГЛАВНЫЙ---------------------------------------------------------------------------------------------------------->
+    </div>
 
+    <!-- Подвал сайта -->
+    <footer>
+        <div>&copy; FreisingUA Главная</div>
+        <div>02 Responsive by QDEX project a</div>
+    </footer>
 
-<script src="script.js"></script>
-<script src="pwa-button.js?v=2"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
