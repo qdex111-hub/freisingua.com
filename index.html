@@ -59,23 +59,24 @@
 <body>
 
     <!-- Шапка сайта (HEADER) -->
+       <!-- Шапка сайта (HEADER) -->
     <div class="header">
         <div class="logo">Freising UA <span>Bayern</span></div>
         <button class="menu-toggle">☰</button>
         <div class="menu">
-            <a href="index.html" class="active">Главная</a>
-            <a href="about.html" target="_blank">О нас</a>
-            <a href="gallery.html" target="_blank">Галерея</a>
+            <a href="index.html">Главная</a>
+            <a href="about.html">О нас</a>
+            <a href="gallery.html">Галерея</a>
             <div class="menu-item dropdown">
                 <button class="dropdown-btn">Документы <span>▼</span></button>
                 <div class="submenu">
-                    <a href="apostil.html" target="_blank">Апостиль</a>
-                    <a href="citizenship.html" target="_blank">Гражданство</a>
+                    <a href="apostil.html">Апостиль</a>
+                    <a href="translations.html">Переводы</a>
                 </div>
             </div>
-            <a href="contacts.html" target="_blank">Контакты</a>
-            <a href="TRANSLATORS.html" target="_blank">Переводчики</a>
-            <a href="transportation.html" target="_blank">Перевозчики</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="TRANSLATORS.html" class="active">Переводчики</a>
+            <a href="transportation.html">Перевозчики</a>
         </div>
     </div>
 
@@ -259,25 +260,6 @@
     </footer>
 <script src="pwa-button.js"></script>
     <script src="script.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    // Находим блок, который идет сразу после кнопки и содержит ссылки
-    const menuContainer = menuToggle.nextElementSibling;
-
-    if (menuToggle && menuContainer) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            // Переключаем видимость меню
-            if (menuContainer.style.display === 'block') {
-                menuContainer.style.display = 'none';
-            } else {
-                menuContainer.style.display = 'block';
-            }
-        });
-    }
-});
-</script>
 
 </body>
 </html>
