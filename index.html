@@ -259,6 +259,25 @@
     </footer>
 <script src="pwa-button.js"></script>
     <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    // Находим блок, который идет сразу после кнопки и содержит ссылки
+    const menuContainer = menuToggle.nextElementSibling;
+
+    if (menuToggle && menuContainer) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Переключаем видимость меню
+            if (menuContainer.style.display === 'block') {
+                menuContainer.style.display = 'none';
+            } else {
+                menuContainer.style.display = 'block';
+            }
+        });
+    }
+});
+</script>
 
 </body>
 </html>
