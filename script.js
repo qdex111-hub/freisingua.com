@@ -126,7 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
 // ========================================================
 // КОД ДЛЯ КНОПКИ УСТАНОВКИ НА РАБОЧИЙ СТОЛ (PWA)
 // ========================================================
-let deferredPrompt;
+if (typeof deferredPrompt === 'undefined') {
+  window.deferredPrompt = null;
+}
+
 const installButton = document.getElementById('install-btn') || document.querySelector('.install-btn'); 
 
 window.addEventListener('beforeinstallprompt', (e) => {
