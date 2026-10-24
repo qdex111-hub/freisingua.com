@@ -98,35 +98,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
-// КНОПКА PWA БЕЗ ДУБЛИРОВАНИЯ ОБЪЯВЛЕНИЯ ПЕРЕМЕННОЙ
-const installButton = document.getElementById('install-btn') || document.querySelector('.install-btn'); 
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); 
-  window.deferredPrompt = e;  
-  if (installButton) {
-    installButton.removeAttribute('disabled');
-    installButton.style.opacity = '1';
-  }
-});
-
-if (installButton) {
-  installButton.addEventListener('click', async () => {
-    if (window.deferredPrompt) {
-      window.deferredPrompt.prompt(); 
-      const { outcome } = await window.deferredPrompt.userChoice; 
-      console.log(`Пользователь выбрал: ${outcome}`);
-      window.deferredPrompt = null; 
-    } else {
-      alert('Автоматическая установка заблокирована вашим браузером. Чтобы установить сайт, нажмите на меню браузера (три точки) и выведите пункт "Добавить на главный экран".');
-    }
-  });
-}
-
-window.addEventListener('appinstalled', () => {
-  console.log('Сайт успешно добавлен на рабочий стол');
-  if (installButton) installButton.style.display = 'none';
-  window.deferredPrompt = null;
-});
-
